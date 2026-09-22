@@ -3,7 +3,7 @@ import { HeroBanner } from '../components/HeroBanner'
 import { TrustBadges } from '../components/TrustBadges'
 import { CategoriesSection } from '../components/CategoriesSection'
 import { ProductCarouselSection } from '../components/ProductCarouselSection'
-import { ArtisanStory } from '../components/ArtisanStory'
+import { ClayWorldSection } from '../components/ClayWorldSection'
 import { CustomerReviews } from '../components/CustomerReviews'
 import { Newsletter } from '../components/Newsletter'
 import { PRODUCTS } from '../data/products'
@@ -85,8 +85,8 @@ export const HomePage = () => {
       {/* Customer Reviews & Google Badge */}
       <CustomerReviews />
 
-      {/* Brand & Artisan Story Feature */}
-      <ArtisanStory />
+      {/* Clay Is Our World - Brand Story & Manifesto */}
+      <ClayWorldSection />
 
       {/* Newsletter */}
       <Newsletter />
