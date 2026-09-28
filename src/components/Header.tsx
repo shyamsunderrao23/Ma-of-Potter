@@ -129,88 +129,87 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-[#EDE1D3] transition-all">
-      {/* Top Header Row (Social Icons | Brand Logo | Search, User, Wishlist, Cart) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-20 sm:h-24 flex items-center justify-between">
-          {/* Left: Social Media Icons matching screenshot */}
-          <div className="hidden md:flex items-center gap-4 text-stone-500">
-            {/* Facebook */}
-            <a
-              href="#facebook"
-              aria-label="Facebook"
-              className="hover:text-[#B36B4D] transition-colors"
+      {/* Top Header Row (Left: Menu/Social | Center: Absolute Centered Brand Logo | Right: Actions) */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="h-20 sm:h-24 flex items-center justify-between relative">
+          
+          {/* Left: Mobile Menu Trigger / Desktop Social Icons */}
+          <div className="flex items-center justify-start z-10">
+            {/* Mobile menu trigger */}
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="md:hidden p-1.5 -ml-1 text-stone-700 hover:text-[#B36B4D] transition-colors cursor-pointer shrink-0"
+              aria-label="Open Menu"
             >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-              </svg>
-            </a>
+              <Menu className="w-6 h-6" />
+            </button>
 
-            {/* Pinterest */}
-            <a
-              href="#pinterest"
-              aria-label="Pinterest"
-              className="hover:text-[#B36B4D] transition-colors"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.056.208-.182.253-.419.153-1.564-.728-2.543-3.011-2.543-4.848 0-3.947 2.867-7.571 8.271-7.571 4.341 0 7.714 3.094 7.714 7.228 0 4.313-2.719 7.784-6.491 7.784-1.268 0-2.461-.659-2.868-1.439l-.78 2.973c-.282 1.087-1.045 2.45-1.556 3.284 1.144.354 2.355.545 3.61.545 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
-              </svg>
-            </a>
-
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="hover:text-[#25D366] transition-colors"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-              </svg>
-            </a>
-
-            {/* Instagram */}
-            <a
-              href="#instagram"
-              aria-label="Instagram"
-              className="hover:text-[#B36B4D] transition-colors"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </a>
+            {/* Desktop Social Icons */}
+            <div className="hidden md:flex items-center gap-4 text-stone-500">
+              <a
+                href="#facebook"
+                aria-label="Facebook"
+                className="hover:text-[#B36B4D] transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                </svg>
+              </a>
+              <a
+                href="#pinterest"
+                aria-label="Pinterest"
+                className="hover:text-[#B36B4D] transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.056.208-.182.253-.419.153-1.564-.728-2.543-3.011-2.543-4.848 0-3.947 2.867-7.571 8.271-7.571 4.341 0 7.714 3.094 7.714 7.228 0 4.313-2.719 7.784-6.491 7.784-1.268 0-2.461-.659-2.868-1.439l-.78 2.973c-.282 1.087-1.045 2.45-1.556 3.284 1.144.354 2.355.545 3.61.545 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="hover:text-[#25D366] transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+              </a>
+              <a
+                href="#instagram"
+                aria-label="Instagram"
+                className="hover:text-[#B36B4D] transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          {/* Mobile menu trigger */}
-          <button
-            onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden p-2 text-stone-700 hover:text-[#B36B4D]"
-            aria-label="Open Menu"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          {/* Center Column: Absolute True Geometric Center */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center pointer-events-auto">
+            <Link
+              to="/"
+              className="flex items-center gap-1.5 xs:gap-2 sm:gap-3.5 group"
+            >
+              <img
+                src="/logo.png"
+                alt="Man of Potter Logo"
+                className="w-8 h-8 xs:w-9 xs:h-9 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full object-cover shadow-md group-hover:scale-105 transition-transform duration-200 shrink-0"
+              />
+              <span className="font-serif text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] font-bold tracking-tight text-[#241A15] group-hover:text-[#B36B4D] transition-colors whitespace-nowrap">
+                Man of Potter
+              </span>
+            </Link>
+          </div>
 
-          {/* Center: Brand Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-3.5 group"
-          >
-            <img
-              src="/logo.png"
-              alt="Man of Potter Logo"
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shadow-sm group-hover:scale-105 transition-transform duration-200"
-            />
-            <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#241A15] group-hover:text-[#B36B4D] transition-colors">
-              Man of Potter
-            </span>
-          </Link>
-
-          {/* Right Action Icons (Search, User, Wishlist, Cart) matching screenshot */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          {/* Right Column: Action Icons */}
+          <div className="flex items-center justify-end gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 z-10">
             {/* Search Icon */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-stone-700 hover:text-[#B36B4D] transition-colors cursor-pointer"
+              className="p-1 xs:p-1.5 sm:p-2 text-stone-700 hover:text-[#B36B4D] transition-colors cursor-pointer"
               aria-label="Search"
               title="Search pottery"
             >
@@ -220,7 +219,7 @@ export const Header: React.FC = () => {
             {/* User Profile / Account Icon */}
             <button
               onClick={() => setAccountOpen(true)}
-              className="p-2 text-stone-700 hover:text-[#B36B4D] transition-colors cursor-pointer"
+              className="p-1.5 sm:p-2 text-stone-700 hover:text-[#B36B4D] transition-colors cursor-pointer hidden md:block"
               aria-label="My Account"
               title="My Account"
             >
@@ -230,12 +229,12 @@ export const Header: React.FC = () => {
             {/* Wishlist Icon with round badge count */}
             <button
               onClick={() => setIsWishlistOpen(true)}
-              className="p-2 text-stone-700 hover:text-[#B36B4D] transition-colors relative cursor-pointer"
+              className="p-1 xs:p-1.5 sm:p-2 text-stone-700 hover:text-[#B36B4D] transition-colors relative cursor-pointer"
               aria-label="Wishlist"
               title="Saved Favorites"
             >
               <Heart className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span className="absolute top-1 right-1 w-4 h-4 bg-[#B36B4D] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-4 h-4 bg-[#B36B4D] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                 {wishlist.length}
               </span>
             </button>
@@ -243,12 +242,12 @@ export const Header: React.FC = () => {
             {/* Shopping Bag / Cart with round badge count */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="p-2 text-stone-700 hover:text-[#B36B4D] transition-colors relative cursor-pointer"
+              className="p-1 xs:p-1.5 sm:p-2 text-stone-700 hover:text-[#B36B4D] transition-colors relative cursor-pointer"
               aria-label="Cart"
               title="Shopping Cart"
             >
               <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span className="absolute top-1 right-1 w-4 h-4 bg-[#B36B4D] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-4 h-4 bg-[#B36B4D] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                 {cartCount}
               </span>
             </button>
@@ -429,18 +428,44 @@ export const Header: React.FC = () => {
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#B36B4D]">
                   Contact Us
                 </Link>
+
+                {/* Account / Profile Item in Sidebar */}
+                <div className="pt-3 border-t border-stone-100">
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false)
+                      setAccountOpen(true)
+                    }}
+                    className="flex items-center gap-3 w-full py-2.5 px-3 rounded-xl bg-[#FAF6F0] text-[#B36B4D] font-bold text-xs tracking-wide hover:bg-[#F3ECE2] transition-colors cursor-pointer"
+                  >
+                    <User className="w-4 h-4 text-[#B36B4D]" />
+                    <span>My Account & Orders</span>
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-stone-200">
+            <div className="pt-6 border-t border-stone-200 space-y-2.5">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  setIsWishlistOpen(true)
+                }}
+                className="w-full flex items-center justify-center gap-2 border border-stone-300 text-stone-700 py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs hover:bg-stone-50"
+              >
+                <Heart className="w-3.5 h-3.5 text-[#B36B4D]" />
+                <span>Wishlist ({wishlist.length})</span>
+              </button>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false)
                   navigate('/cart')
                 }}
-                className="w-full bg-[#B36B4D] text-white py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow"
+                className="w-full bg-[#B36B4D] hover:bg-[#94553D] text-white py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow flex items-center justify-center gap-2"
               >
-                View Cart ({cartCount})
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span>View Cart ({cartCount})</span>
               </button>
             </div>
           </div>
